@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: gossipprotocol
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+    health:
+      enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+
+heartbeat:
+  update-frequency: 40000 #my heartbeat update frequency
+
+gossip:
+  frequency: 60000  #gossip frequency in milli-seconds

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nonseed
+  name: nonseed
+spec:
+  containers:
+    - image: archit05/gossipprotocol:0.0.3
+      name: nonseed
+      ports:
+        - containerPort: 8080
+      resources: {}
+      env:
+        - name: MY_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: IS_SEED
+          value: 'N'
+        - name: SEED_ADDRESS
+          value: '10.1.1.70:8080'
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
