@@ -16,11 +16,11 @@ This is a very limited implementation of Gossip Protocol. This implementation us
 
 - Run seed-svc.yml to create service that exposes seed pod. Note down port of seed-service.
 
-- Do a request from browser : http://localhost:<port>/gossip/mystate to check the state of seed pod. You should only see the heart beat state of seed pod.
+- Do a request from browser : http://localhost:port/gossip/mystate to check the state of seed pod. You should only see the heart beat state of seed pod.
 
 - Edit the nonseed-deployment.yml and add the IP address of seed pod in environment variables. Run the nonseed-deployment.yml
 
-- Now recheck the state of seed pod (using GET /gossip/mystate) and you should be able to see non seed pods heartbeats in the state. Gossip Protocol has lead to node discovery.
+- Now recheck the state of seed pod (using GET /gossip/mystate) and you should be able to see non-seed pods heartbeats in the state. Gossip Protocol has led to node discovery.
 
 
 
