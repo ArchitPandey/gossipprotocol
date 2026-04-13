@@ -1,7 +1,6 @@
 package com.example.gossipprotocol.model;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.Instant;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class HeartBeatState implements Comparable<HeartBeatState> {
@@ -11,12 +10,7 @@ public class HeartBeatState implements Comparable<HeartBeatState> {
     private AtomicInteger heartBeat;
 
     public HeartBeatState() {
-        this.generation = LocalDate
-                .now()
-                .atStartOfDay()
-                .atZone(ZoneId.of("UTC"))
-                .toInstant()
-                .getEpochSecond();
+        this.generation = Instant.now().getEpochSecond();
         this.heartBeat = new AtomicInteger(0);
     }
 
